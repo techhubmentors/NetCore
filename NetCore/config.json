@@ -1,0 +1,55 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  //// Local
+  "ConnectionStrings": {
+    "DreamPartRegContextConnection": "Server=NDI-LAP-621\\SQLSERVER2017;Database=DreamsPart_Reg;User ID=sa;Password=Tpg@2020;",
+    "DreamPartSecurityContextConnection": "Server=NDI-LAP-621\\SQLSERVER2017;Database=Identity;User ID=sa;Password=Tpg@2020;"
+  },
+
+  //"HealthChecks-UI": {
+  //  "DisableMigrations": true,
+  //  "HealthChecks": [
+  //    {
+  //      "Name": "TechHubMentors",
+  //      "Uri": "http://localhost:49214/healthui"
+  //    }
+  //  ],
+  //  "Webhooks": [
+  //    {
+  //      "Name": "",
+  //      "Uri": "",
+  //      "Payload": "",
+  //      "RestoredPayload": ""
+  //    }
+  //  ],
+  //  "EvaluationTimeOnSeconds": 10,
+  //  "MinimumSecondsBetweenFailureNotifications": 60,
+  //  "MaximumExecutionHistoriesPerEndpoint": 15
+  //}
+
+  "Serilog": {
+
+    "ColumnOptions": {
+      "addStandardColumns": [ "LogEvent" ],
+      "removeStandardColumns": [ "MessageTemplate", "Properties" ],
+      "timeStamp": {
+        "columnName": "Timestamp",
+        "convertToUtc": false
+      }
+    },
+
+    "ConnectionStrings": {
+      "LogDatabase": "Data Source=NDI-LAP-621\\SQLSERVER2017;Initial Catalog=DreamsPart_Reg; User ID=sa;Password=Tpg@2020"
+    },
+    "SchemaName": "dbo",
+    "TableName": "Log"
+
+  }
+}
