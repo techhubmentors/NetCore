@@ -33,6 +33,8 @@ namespace NetCore
 
             CreateHostBuilder(args).Build().Run();
             Log.CloseAndFlush();
+
+            // test
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
